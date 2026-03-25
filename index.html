@@ -7,13 +7,18 @@
   <style>
     /* General Styles */
     body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #006400, #ffcc00);
-      color: #fff;
-      overflow-x: hidden;
-      scroll-behavior: smooth;
-    }
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(270deg, #00c853, #ffcc00, #ff0066, #00c853);
+  background-size: 600% 600%;
+  animation: gradientMove 10s ease infinite;
+  color: #fff;
+}
+    @keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
 
     header {
       position: fixed;
