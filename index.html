@@ -49,6 +49,18 @@ p { font-weight: 400; }   /* regular */
   body { padding: 10px; }
 }
     html { scroll-behavior: smooth; }
+    .hero h1 {
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeIn 2s forwards 0.5s;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
     header {
       position: fixed;
