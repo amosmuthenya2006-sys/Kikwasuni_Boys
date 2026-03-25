@@ -19,6 +19,36 @@
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
+    h1 { font-weight: 700; }  /* bold */
+p { font-weight: 400; }   /* regular */
+    h1 { letter-spacing: 1px; }
+    .fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1s ease;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+    button:hover {
+  background-color: #fff;
+  color: #00c853;
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+    .card {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 20px;
+}
+    @media (max-width: 768px) {
+  h1 { font-size: 1.5rem; }
+  body { padding: 10px; }
+}
+    html { scroll-behavior: smooth; }
 
     header {
       position: fixed;
