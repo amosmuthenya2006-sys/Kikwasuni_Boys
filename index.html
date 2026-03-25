@@ -241,7 +241,7 @@
         <img loading="lazy" src="https://i.postimg.cc/2547XdK1/KIKWASUNI-BOYS-BAND.png" alt="Kikwusuni Band T-shirt">
         <h3>Kikwusuni Band T-shirt</h3>
         <p>Price: Ksh 1500</p>
-        <button>Buy Now</button>
+       <button onclick="payNow('T-shirt', 1500)">Buy Now</button>
       </div>
       <div class="shop-item">
         <img loading="lazy" src="https://i.postimg.cc/cLPFzL1k/KIKWASUNI-BOYS-BAND-1.png" alt="Kikwusuni Band Cap">
@@ -255,5 +255,16 @@
   <footer>
     <p>&copy; 2025 Kikwusuni Boys Band. All rights reserved.</p>
   </footer>
+  <script>
+function payNow(product, price){
+  alert(
+    "To buy " + product + ":\n\n" +
+    "1. Go to M-Pesa\n" +
+    "2. Send KSh " + price + "\n" +
+    "3. Send to: 07XXXXXXXX\n\n" +
+    "Then send confirmation message via WhatsApp."
+  );
+}
+</script>
 </body>
 </html>
