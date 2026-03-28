@@ -63,29 +63,40 @@ p { font-weight: 400; }   /* regular */
     transform: translateY(0);
   }
 }
-    .live-badge {
-  font-size: 0.9rem;
-  margin-left: 10px;
-  color: #00ff88;
-  font-weight: 600;
-  position: relative;
-}
-
-.live-badge::before {
-  content: "";
-  width: 8px;
-  height: 8px;
-  background: #00ff88;
-  border-radius: 50%;
-  display: inline-block;
-  margin-right: 5px;
-  animation: pulse 1.5s infinite;
-}
+  
 
 @keyframes pulse {
   0% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.5); opacity: 0.5; }
+  50% { transform: scale(1.1); opacity: 0.7; }
   100% { transform: scale(1); opacity: 1; }
+}
+
+.live-badge {
+  animation: pulse 1.5s infinite;
+}
+    /* Fix heading alignment */
+.main-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* LIVE badge style */
+.live-badge {
+  background: #00c853;
+  color: #fff;
+  font-size: 0.7rem;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* Optional: small glow effect (safe, not blocking) */
+.live-badge {
+  box-shadow: 0 0 8px rgba(0, 200, 83, 0.6);
 }
 
     header {
@@ -221,11 +232,14 @@ header p {
   </style>
 </head>
 <body>
- <header>
-  <h1>
+<header>
+  <h1 class="main-title">
     KIKWASUNI BOYS BAND 
-    <span class="live-badge">● LIVE</span>
+    <span class="live-badge">LIVE</span>
   </h1>
+
+  <h2>Welcome to Kikwasuni</h2>
+
   <p>Feel the rhythm, live the vibe "THE KAMBA NATION" 🎶</p>
 
   <nav>
