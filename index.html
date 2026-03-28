@@ -5,26 +5,194 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>KIKWASUNI BOYS BAND</title>
   <style>
-    /* General Styles */
-    body {
+   /* ================= GENERAL STYLES ================= */
+body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
   background: linear-gradient(270deg, #00c853, #ffcc00, #ff9900, #00c853);
   background-size: 600% 600%;
   animation: gradientMove 200s ease infinite;
   color: #fff;
+  padding-top: 120px; /* FIX for fixed header */
 }
-    body.light { background: #fff; color: #000; }
-body.dark { background: linear-gradient(...); color: #fff; }
-    @keyframes gradientMove {
+
+@keyframes gradientMove {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
-    h1 { font-weight: 700; }  /* bold */
-p { font-weight: 400; }   /* regular */
-    h1 { letter-spacing: 1px; }
-    .fade-in {
+
+/* ================= TYPOGRAPHY ================= */
+h1 {
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-weight: 400;
+}
+
+/* ================= HEADER ================= */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  text-align: center;
+  padding: 1rem;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  backdrop-filter: blur(10px);
+}
+
+/* Main title with LIVE badge */
+.main-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  font-size: 1.6rem;
+}
+
+/* LIVE badge */
+.live-badge {
+  background: #00c853;
+  color: #fff;
+  font-size: 0.7rem;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  box-shadow: 0 0 8px rgba(0, 200, 83, 0.6);
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.7; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+header p {
+  margin: 5px 0;
+  font-size: 0.8rem;
+}
+
+/* ================= NAVIGATION ================= */
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background: rgba(255, 255, 255, 0.1);
+  margin-top: 10px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 0.7rem 1rem;
+  display: block;
+  transition: background 0.3s;
+}
+
+nav a:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* ================= SECTIONS ================= */
+section {
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+/* ================= CARDS ================= */
+.music, .gallery, .shop {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.music-item, .gallery-item, .shop-item {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 1rem;
+  border-radius: 10px;
+  width: 250px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.music-item iframe {
+  width: 100%;
+  height: 180px;
+  border-radius: 10px;
+}
+
+.gallery-item img, .shop-item img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.shop-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+/* ================= FORM ================= */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+input, textarea, button {
+  padding: 0.8rem;
+  border: none;
+  border-radius: 5px;
+}
+
+input, textarea {
+  width: 100%;
+}
+
+input:focus, textarea:focus {
+  outline: 2px solid #ffcc00;
+  background: rgba(255,255,255,0.1);
+}
+
+button {
+  background: #ffcc00;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #fff;
+  color: #00c853;
+  transform: scale(1.05);
+}
+
+/* ================= FOOTER ================= */
+footer {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* ================= ANIMATIONS ================= */
+.fade-in {
   opacity: 0;
   transform: translateY(20px);
   transition: all 1s ease;
@@ -34,201 +202,26 @@ p { font-weight: 400; }   /* regular */
   opacity: 1;
   transform: translateY(0);
 }
-    button:hover {
-  background-color: #fff;
-  color: #00c853;
-  transform: scale(1.05);
-  transition: all 0.3s ease;
-}
-    .card {
-  background: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-  padding: 20px;
-}
-    @media (max-width: 768px) {
-  h1 { font-size: 1.5rem; }
-  body { padding: 10px; }
-}
-    html { scroll-behavior: smooth; }
-    .hero h1 {
-  opacity: 0;
-  transform: translateY(-20px);
-  animation: fadeIn 2s forwards 0.5s;
-}
 
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.3rem;
+  }
+
+  body {
+    padding-top: 140px; /* more space for mobile header */
+  }
+
+  .music-item, .gallery-item, .shop-item {
+    width: 90%;
   }
 }
-  
 
-@keyframes pulse {
-  0% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.1); opacity: 0.7; }
-  100% { transform: scale(1); opacity: 1; }
+/* ================= SMOOTH SCROLL ================= */
+html {
+  scroll-behavior: smooth;
 }
-
-.live-badge {
-  animation: pulse 1.5s infinite;
-}
-    /* Fix heading alignment */
-.main-title {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-/* LIVE badge style */
-.live-badge {
-  background: #00c853;
-  color: #fff;
-  font-size: 0.7rem;
-  padding: 4px 10px;
-  border-radius: 20px;
-  font-weight: bold;
-  letter-spacing: 1px;
-}
-
-/* Optional: small glow effect (safe, not blocking) */
-.live-badge {
-  box-shadow: 0 0 8px rgba(0, 200, 83, 0.6);
-}
-
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.8);
-      text-align: center;
-      padding: 1rem 1rem;
-      z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-    }
-    header h1 {
-  font-size: 1.6rem;
-  padding: 0.3rem 0;
-  margin: 0;
-}
-
-header p {
-  margin: 0.1rem 0 0.3rem 0;
-  font-size: 0.7rem;
-}
-    nav {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      background: rgba(255, 255, 255, 0.1);
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      padding: 0.7rem 1rem;
-      display: block;
-      transition: background 0.3s;
-    }
-
-    nav a:hover {
-      background: rgba(255, 255, 255, 0.3);
-    }
-
-    section {
-      padding: 8rem 1rem 3rem; /* top padding increased for fixed header */
-      text-align: center;
-    }
-
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    .music, .gallery, .shop {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
-    }
-
-    .music-item, .gallery-item, .shop-item {
-      background: rgba(0, 0, 0, 0.4);
-      padding: 1rem;
-      border-radius: 10px;
-      width: 250px;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .music-item iframe {
-      width: 100%;
-      height: 180px;
-      border-radius: 10px;
-    }
-
-    .gallery-item img, .shop-item img {
-      width: 100%;
-      border-radius: 10px;
-    }
-
-    .shop-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
-    }
-
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      max-width: 400px;
-      margin: 0 auto;
-    }
-
-    input, textarea, button {
-      padding: 0.8rem;
-      border: none;
-      border-radius: 5px;
-    }
-
-    input, textarea {
-      width: 100%;
-    }
-
-    input:focus, textarea:focus {
-      outline: 2px solid #ff0066;
-      background: rgba(255,255,255,0.1);
-    }
-
-    button {
-      background: #ffcc00;
-      color: #000;
-      font-weight: bold;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    button:hover {
-      background: #fff;
-      color: #ff0066;
-    }
-
-    footer {
-      background: rgba(0, 0, 0, 0.6);
-      padding: 1rem;
-      text-align: center;
-      font-size: 0.9rem;
-    }
-
-    /* Responsive Styles */
-    @media (max-width: 600px) {
-      .music-item, .gallery-item, .shop-item {
-        width: 90%;
-      }
-    }
   </style>
 </head>
 <body>
